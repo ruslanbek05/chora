@@ -1,4 +1,5 @@
 <?php
+//echo "1";die;
 /**
  * @package    Joomla.Site
  *
