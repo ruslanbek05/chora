@@ -149,7 +149,11 @@ $canDelete  = $user->authorise('core.delete', 'com_chora');
 				</td>
 				<td>
 
-					<?php echo $item->muddati; ?>
+					<?php 
+					//echo $item->muddati;
+					echo JHtml::_('date',$item->muddati,'d.m.Y');
+					
+					?>
 				</td>
 				<td>
 
