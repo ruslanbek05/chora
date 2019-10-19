@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+  <fieldset>
+    <field name="id" type="text" readonly="true" class="readonly" default="0" description="JGLOBAL_FIELD_ID_DESC"/>
+    <field name="ordering"/>
+    <field name="state" default="1" type="list" label="JSTATUS" description="JFIELD_PUBLISHED_DESC" class="inputbox" size="1">
+      <option value="1">JPUBLISHED</option>
+      <option value="0">JUNPUBLISHED</option>
+      <option value="2">JARCHIVED</option>
+      <option value="-2">JTRASHED</option>
+    </field>
+    <field name="checked_out" type="hidden" filter="unset"/>
+    <field name="checked_out_time" default="0000-00-00 00:00:00" type="hidden" filter="unset"/>
+    <field name="created_by" type="createdby" label="COM_IJRO_FORM_LBL_IJRO_CREATED_BY" description="COM_IJRO_FORM_DESC_IJRO_CREATED_BY" hidden="true" hint="COM_IJRO_FORM_LBL_IJRO_CREATED_BY"/>
+    <field name="modified_by" type="modifiedby" default="0" label="COM_IJRO_FORM_LBL_IJRO_MODIFIED_BY" description="COM_IJRO_FORM_DESC_IJRO_MODIFIED_BY" hidden="true" hint="COM_IJRO_FORM_LBL_IJRO_MODIFIED_BY"/>
+    <field name="bajarilgan_ish" editor="|" buttons="true" filter="JComponentHelper::filterText" type="editor" required="true" label="COM_IJRO_FORM_LBL_IJRO_BAJARILGAN_ISH" description="COM_IJRO_FORM_DESC_IJRO_BAJARILGAN_ISH" hint="COM_IJRO_FORM_LBL_IJRO_BAJARILGAN_ISH"/>
+    <field name="tugrilanganligi" type="checkbox" checked="" label="COM_IJRO_FORM_LBL_IJRO_TUGRILANGANLIGI" description="COM_IJRO_FORM_DESC_IJRO_TUGRILANGANLIGI" hint="COM_IJRO_FORM_LBL_IJRO_TUGRILANGANLIGI"/>
+    <field name="chora_id" label="COM_IJRO_FORM_LBL_IJRO_CHORA_ID" description="COM_IJRO_FORM_DESC_IJRO_CHORA_ID" hint="COM_IJRO_FORM_LBL_IJRO_CHORA_ID"/>
+    <field name="version_note" type="text" label="JGLOBAL_FIELD_VERSION_NOTE_LABEL" description="JGLOBAL_FIELD_VERSION_NOTE_DESC" class="inputbox" size="45" labelclass="control-label"/>
+  </fieldset>
+  <fieldset name="accesscontrol">
+    <field name="asset_id" type="hidden" filter="unset"/>
+    <field name="rules" type="rules" label="JFIELD_RULES_LABEL" translate_label="false" filter="rules" validate="rules" class="inputbox" component="com_ijro" section="ijro"/>
+  </fieldset>
+</form>

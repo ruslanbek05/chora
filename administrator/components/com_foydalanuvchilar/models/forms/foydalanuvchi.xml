@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+  <fieldset>
+    <field name="id" type="text" readonly="true" class="readonly" default="0" description="JGLOBAL_FIELD_ID_DESC"/>
+    <field name="ordering"/>
+    <field name="state" default="1" type="list" label="JSTATUS" description="JFIELD_PUBLISHED_DESC" class="inputbox" size="1">
+      <option value="1">JPUBLISHED</option>
+      <option value="0">JUNPUBLISHED</option>
+      <option value="2">JARCHIVED</option>
+      <option value="-2">JTRASHED</option>
+    </field>
+    <field name="checked_out" type="hidden" filter="unset"/>
+    <field name="checked_out_time" default="0000-00-00 00:00:00" type="hidden" filter="unset"/>
+    <field name="created_by" type="createdby" default="0" label="COM_FOYDALANUVCHILAR_FORM_LBL_FOYDALANUVCHI_CREATED_BY" description="COM_FOYDALANUVCHILAR_FORM_DESC_FOYDALANUVCHI_CREATED_BY" hidden="true" hint="COM_FOYDALANUVCHILAR_FORM_LBL_FOYDALANUVCHI_CREATED_BY"/>
+    <field name="modified_by" type="modifiedby" default="0" label="COM_FOYDALANUVCHILAR_FORM_LBL_FOYDALANUVCHI_MODIFIED_BY" description="COM_FOYDALANUVCHILAR_FORM_DESC_FOYDALANUVCHI_MODIFIED_BY" hidden="true" hint="COM_FOYDALANUVCHILAR_FORM_LBL_FOYDALANUVCHI_MODIFIED_BY"/>
+    <field name="user_id" type="foreignkey" label="COM_FOYDALANUVCHILAR_FORM_LBL_FOYDALANUVCHI_USER_ID" description="COM_FOYDALANUVCHILAR_FORM_DESC_FOYDALANUVCHI_USER_ID" class="inputbox" input_type="list" table="#__users" key_field="id" value_field="name" required="true" default=""/>
+    <field name="mfo_filial" type="foreignkey" label="COM_FOYDALANUVCHILAR_FORM_LBL_FOYDALANUVCHI_MFO_FILIAL" description="COM_FOYDALANUVCHILAR_FORM_DESC_FOYDALANUVCHI_MFO_FILIAL" class="inputbox" input_type="list" table="#__filiallar" key_field="mfo" value_field="mfo" required="true" default=""/>
+    <field name="departament" type="foreignkey" label="COM_FOYDALANUVCHILAR_FORM_LBL_FOYDALANUVCHI_DEPARTAMENT" description="COM_FOYDALANUVCHILAR_FORM_DESC_FOYDALANUVCHI_DEPARTAMENT" class="inputbox" input_type="list" table="#__departamentlar" key_field="nomi" value_field="nomi" default="0"/>
+    <field name="mintaqaviy_filial" type="checkbox" checked="" label="COM_FOYDALANUVCHILAR_FORM_LBL_FOYDALANUVCHI_MINTAQAVIY_FILIAL" description="COM_FOYDALANUVCHILAR_FORM_DESC_FOYDALANUVCHI_MINTAQAVIY_FILIAL" hint="COM_FOYDALANUVCHILAR_FORM_LBL_FOYDALANUVCHI_MINTAQAVIY_FILIAL"/>
+    <field name="ichki_nazorat" type="checkbox" checked="" label="COM_FOYDALANUVCHILAR_FORM_LBL_FOYDALANUVCHI_ICHKI_NAZORAT" description="COM_FOYDALANUVCHILAR_FORM_DESC_FOYDALANUVCHI_ICHKI_NAZORAT" hint="COM_FOYDALANUVCHILAR_FORM_LBL_FOYDALANUVCHI_ICHKI_NAZORAT"/>
+    <field name="ichki_audit" type="checkbox" checked="" label="COM_FOYDALANUVCHILAR_FORM_LBL_FOYDALANUVCHI_ICHKI_AUDIT" description="COM_FOYDALANUVCHILAR_FORM_DESC_FOYDALANUVCHI_ICHKI_AUDIT" hint="COM_FOYDALANUVCHILAR_FORM_LBL_FOYDALANUVCHI_ICHKI_AUDIT"/>
+    <field name="filial" type="checkbox" checked="" label="COM_FOYDALANUVCHILAR_FORM_LBL_FOYDALANUVCHI_FILIAL" description="COM_FOYDALANUVCHILAR_FORM_DESC_FOYDALANUVCHI_FILIAL" hint="COM_FOYDALANUVCHILAR_FORM_LBL_FOYDALANUVCHI_FILIAL"/>
+    <field name="barcha_soha" type="checkbox" checked="" label="COM_FOYDALANUVCHILAR_FORM_LBL_FOYDALANUVCHI_BARCHA_SOHA" description="COM_FOYDALANUVCHILAR_FORM_DESC_FOYDALANUVCHI_BARCHA_SOHA" hint="COM_FOYDALANUVCHILAR_FORM_LBL_FOYDALANUVCHI_BARCHA_SOHA"/>
+    <field name="bosh_bank" type="checkbox" checked="" label="COM_FOYDALANUVCHILAR_FORM_LBL_FOYDALANUVCHI_BOSH_BANK" description="COM_FOYDALANUVCHILAR_FORM_DESC_FOYDALANUVCHI_BOSH_BANK" hint="COM_FOYDALANUVCHILAR_FORM_LBL_FOYDALANUVCHI_BOSH_BANK"/>
+    <field name="version_note" type="text" label="JGLOBAL_FIELD_VERSION_NOTE_LABEL" description="JGLOBAL_FIELD_VERSION_NOTE_DESC" class="inputbox" size="45" labelclass="control-label"/>
+  </fieldset>
+  <fieldset name="accesscontrol">
+    <field name="asset_id" type="hidden" filter="unset"/>
+    <field name="rules" type="rules" label="JFIELD_RULES_LABEL" translate_label="false" filter="rules" validate="rules" class="inputbox" component="com_foydalanuvchilar" section="foydalanuvchi"/>
+  </fieldset>
+</form>

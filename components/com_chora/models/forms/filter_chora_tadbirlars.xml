@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+    <fields name="filter">
+        <field name="search" type="text" hint="COM_CHORA_SEARCH_FILTER_SUBMIT"
+               label="COM_USERS_FILTER_SEARCH_DESC"
+               class="js-stools-search-string" />
+
+        <field name="muddati.from" label="COM_CHORA_CHORA_TADBIRLARS_MUDDATI_FILTER_FROM" type="calendar" onchange="this.form.submit();" filter="safehtml" class="inputbox" showtime="false" translateformat="false" hint="COM_CHORA_CHORA_TADBIRLARS_MUDDATI_FILTER_FROM"/>
+<field name="muddati.to" label="COM_CHORA_CHORA_TADBIRLARS_MUDDATI_FILTER_TO" type="calendar" onchange="this.form.submit();" filter="safehtml" class="inputbox" showtime="false" translateformat="false" hint="COM_CHORA_CHORA_TADBIRLARS_MUDDATI_FILTER_TO"/>
+<field name="masul" type="sql" label="COM_CHORA_FORM_LBL_CHORA_TADBIRLAR_MASUL" query="SELECT '' AS `id`, 'COM_CHORA_CHORA_TADBIRLARS_MASUL_FILTER' AS `val` UNION SELECT `id` AS `id`, `name` AS val FROM `#__users`" key_field="id" value_field="val" class="inputbox" onchange="this.form.submit()" translate="true"/>
+<field name="nazorat" type="sql" label="COM_CHORA_FORM_LBL_CHORA_TADBIRLAR_NAZORAT" query="SELECT '' AS `nomi`, 'COM_CHORA_CHORA_TADBIRLARS_NAZORAT_FILTER' AS `val` UNION SELECT `nomi` AS `nomi`, `nomi` AS val FROM `#__departamentlar`" key_field="nomi" value_field="val" class="inputbox" onchange="this.form.submit()" translate="true"/>
+
+
+    </fields>
+</form>

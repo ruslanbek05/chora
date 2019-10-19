@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+    <fields name="filter">
+        <field name="search" type="text" hint="COM_CHORA_SEARCH_FILTER_SUBMIT"
+               label="COM_USERS_FILTER_SEARCH_DESC"
+               class="js-stools-search-string" />
+
+        <field name="state"
+               type="status"
+               label="COM_CHORA_FILTER_STATE"
+               description="COM_CHORA_FILTER_STATE_DESC"
+               onchange="this.form.submit();"
+        >
+            <option value="">JOPTION_SELECT_PUBLISHED</option>
+        </field>
+
+        <field name="created_by" label="COM_CHORA_FORM_LBL_CHORA_TADBIRLAR_CREATED_BY" type="sql" query="SELECT &quot;&quot; AS `id`, &quot;COM_CHORA_CHORA_TADBIRLARS_CREATED_BY_FILTER&quot; AS `name` UNION SELECT `id`, `name` FROM `#__users`" translate="true" key_field="id" value_field="name" onchange="this.form.submit();"/>
+<field name="muddati.from" label="COM_CHORA_CHORA_TADBIRLARS_MUDDATI_FILTER_FROM" type="calendar" onchange="this.form.submit();" filter="safehtml" class="inputbox" showtime="false" translateformat="false" hint="COM_CHORA_CHORA_TADBIRLARS_MUDDATI_FILTER_FROM"/>
+<field name="muddati.to" label="COM_CHORA_CHORA_TADBIRLARS_MUDDATI_FILTER_TO" type="calendar" onchange="this.form.submit();" filter="safehtml" class="inputbox" showtime="false" translateformat="false" hint="COM_CHORA_CHORA_TADBIRLARS_MUDDATI_FILTER_TO"/>
+<field name="masul" type="sql" label="COM_CHORA_FORM_LBL_CHORA_TADBIRLAR_MASUL" query="SELECT '' AS `id`, 'COM_CHORA_CHORA_TADBIRLARS_MASUL_FILTER' AS `val` UNION SELECT `id` AS `id`, `name` AS val FROM `#__users`" key_field="id" value_field="val" class="inputbox" onchange="this.form.submit()" translate="true"/>
+<field name="nazorat" type="sql" label="COM_CHORA_FORM_LBL_CHORA_TADBIRLAR_NAZORAT" query="SELECT '' AS `nomi`, 'COM_CHORA_CHORA_TADBIRLARS_NAZORAT_FILTER' AS `val` UNION SELECT `nomi` AS `nomi`, `nomi` AS val FROM `#__departamentlar`" key_field="nomi" value_field="val" class="inputbox" onchange="this.form.submit()" translate="true"/>
+
+
+    </fields>
+
+    <fields name="list">
+
+        <field name="fullordering"
+               type="list"
+               label="COM_CONTENT_LIST_FULL_ORDERING"
+               description="COM_CONTENT_LIST_FULL_ORDERING_DESC"
+               onchange="this.form.submit();"
+               default="a.id DESC"
+        >
+            <option value="">JGLOBAL_SORT_BY</option>
+            <option value="a.`id` ASC">ID Ascending</option><option value="a.`id` DESC">ID Descending</option><option value="a.`ordering` ASC">Order Ascending</option><option value="a.`ordering` DESC">Order Descending</option><option value="a.`state` ASC">State Ascending</option><option value="a.`state` DESC">State Descending</option><option value="a.`created_by` ASC">Created by Ascending</option><option value="a.`created_by` DESC">Created by Descending</option><option value="a.`mazmuni` ASC">Mazmuni Ascending</option><option value="a.`mazmuni` DESC">Mazmuni Descending</option><option value="a.`vazifa` ASC">Vazifa Ascending</option><option value="a.`vazifa` DESC">Vazifa Descending</option><option value="a.`muddati` ASC">Muddati Ascending</option><option value="a.`muddati` DESC">Muddati Descending</option><option value="a.`masul` ASC">Masul Ascending</option><option value="a.`masul` DESC">Masul Descending</option><option value="a.`nazorat` ASC">Nazorat Ascending</option><option value="a.`nazorat` DESC">Nazorat Descending</option><option value="a.`tugrilandi_filial` ASC">Tugrilandi Filial Ascending</option><option value="a.`tugrilandi_filial` DESC">Tugrilandi Filial Descending</option><option value="a.`tugrilandi_bosh_bank` ASC">Tugrilandi Bosh Bank Ascending</option><option value="a.`tugrilandi_bosh_bank` DESC">Tugrilandi Bosh Bank Descending</option><option value="a.`tugrilandi_ichki_nazorat` ASC">Tugrilandi Ichki Nazorat Ascending</option><option value="a.`tugrilandi_ichki_nazorat` DESC">Tugrilandi Ichki Nazorat Descending</option><option value="a.`tugrilandi_ichki_audit` ASC">Tugrilandi Ichki Audit Ascending</option><option value="a.`tugrilandi_ichki_audit` DESC">Tugrilandi Ichki Audit Descending</option>
+
+        </field>
+
+        <field name="limit"
+               type="limitbox"
+               class="input-mini"
+               default="25"
+               onchange="this.form.submit();"
+        />
+
+    </fields>
+
+</form>
