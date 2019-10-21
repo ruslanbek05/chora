@@ -1,0 +1,8 @@
+plugin
+button image plagin disabled
+also disable buttons:
+contact
+menu
+module
+article
+page breaker

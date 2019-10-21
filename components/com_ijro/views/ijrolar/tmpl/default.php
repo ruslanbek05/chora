@@ -29,6 +29,9 @@ $canEdit    = $user->authorise('core.edit', 'com_ijro') && file_exists(JPATH_COM
 $canCheckin = $user->authorise('core.manage', 'com_ijro');
 $canChange  = $user->authorise('core.edit.state', 'com_ijro');
 $canDelete  = $user->authorise('core.delete', 'com_ijro');
+
+	$chora_id = 0;
+	$chora_id = JRequest::getVar('chora_id');
 ?>
 
 <form action="<?php echo htmlspecialchars(Uri::getInstance()->toString()); ?>" method="post"
@@ -123,7 +126,7 @@ $canDelete  = $user->authorise('core.delete', 'com_ijro');
 								<?php if ($canEdit || $canDelete): ?>
 					<td class="center">
 						<?php if ($canEdit): ?>
-							<a href="<?php echo JRoute::_('index.php?option=com_ijro&task=ijroform.edit&id=' . $item->id, false, 2); ?>" class="btn btn-mini" type="button"><i class="icon-edit" ></i></a>
+							<a href="<?php echo JRoute::_('index.php?option=com_ijro&task=ijroform.edit&id=' . $item->id . '&chora_id='.$chora_id, false, 2); ?>" class="btn btn-mini" type="button"><i class="icon-edit" ></i></a>
 						<?php endif; ?>
 						<?php if ($canDelete): ?>
 							<a href="<?php echo JRoute::_('index.php?option=com_ijro&task=ijroform.remove&id=' . $item->id, false, 2); ?>" class="btn btn-mini delete-button" type="button"><i class="icon-trash" ></i></a>
@@ -137,8 +140,7 @@ $canDelete  = $user->authorise('core.delete', 'com_ijro');
 	</table>
 
 	<?php if ($canCreate) : 
-	$chora_id = 0;
-	$chora_id = JRequest::getVar('chora_id');
+
 	?>
 		<a href="<?php echo Route::_('index.php?option=com_ijro&task=ijroform.edit&id=0&chora_id='.$chora_id, false, 0); ?>"
 		   class="btn btn-success btn-small"><i

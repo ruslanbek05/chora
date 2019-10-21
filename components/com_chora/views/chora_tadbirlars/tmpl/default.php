@@ -35,7 +35,7 @@ $canDelete  = $user->authorise('core.delete', 'com_chora');
       name="adminForm" id="adminForm">
 
 	<?php echo JLayoutHelper::render('default_filter', array('view' => $this), dirname(__FILE__)); ?>
-	<table class="table table-striped" id="chora_tadbirlarList">
+	<table id="chora_tadbirlarList" border="1">
 		<thead>
 		<tr>
 			<?php if (isset($this->items[0]->state)): ?>
@@ -49,12 +49,6 @@ $canDelete  = $user->authorise('core.delete', 'com_chora');
 				</th>
 				<th class=''>
 				<?php echo JHtml::_('grid.sort',  'COM_CHORA_CHORA_TADBIRLARS_CREATED_BY', 'a.created_by', $listDirn, $listOrder); ?>
-				</th>
-				<th class=''>
-				<?php echo JHtml::_('grid.sort',  'COM_CHORA_CHORA_TADBIRLARS_MAZMUNI', 'a.mazmuni', $listDirn, $listOrder); ?>
-				</th>
-				<th class=''>
-				<?php echo JHtml::_('grid.sort',  'COM_CHORA_CHORA_TADBIRLARS_VAZIFA', 'a.vazifa', $listDirn, $listOrder); ?>
 				</th>
 				<th class=''>
 				<?php echo JHtml::_('grid.sort',  'COM_CHORA_CHORA_TADBIRLARS_MUDDATI', 'a.muddati', $listDirn, $listOrder); ?>
@@ -141,14 +135,6 @@ $canDelete  = $user->authorise('core.delete', 'com_chora');
 							<?php echo JFactory::getUser($item->created_by)->name; ?>				</td>
 				<td>
 
-					<?php echo $item->mazmuni; ?>
-				</td>
-				<td>
-
-					<?php echo $item->vazifa; ?>
-				</td>
-				<td>
-
 					<?php 
 					//echo $item->muddati;
 					echo JHtml::_('date',$item->muddati,'d.m.Y');
@@ -163,28 +149,27 @@ $canDelete  = $user->authorise('core.delete', 'com_chora');
 
 					<?php echo $item->nazorat; ?>
 				</td>
-				<td>
-
+				<td <?php if($item->filial_tugrilagan == 0){echo "bgcolor=\"#ff9999\"";}else{echo "bgcolor=\"#79d2a6\"";} ?>>
 					<?php 
 					//echo $item->tugrilandi_filial; 
 					echo $item->filial_tugrilagan; 
 					?>
 				</td>
-				<td>
+				<td <?php if($item->bosh_bank_tugrilagan == 0){echo "bgcolor=\"#ff9999\"";}else{echo "bgcolor=\"#79d2a6\"";} ?>>
 
 					<?php 
 					//echo $item->tugrilandi_bosh_bank;
 					echo $item->bosh_bank_tugrilagan;
 					 ?>
 				</td>
-				<td>
+				<td <?php if($item->ichki_nazorat_tugrilagan == 0){echo "bgcolor=\"#ff9999\"";}else{echo "bgcolor=\"#79d2a6\"";} ?>>
 
 					<?php 
 					//echo $item->tugrilandi_ichki_nazorat; 
 					echo $item->ichki_nazorat_tugrilagan; 
 					?>
 				</td>
-				<td>
+				<td <?php if($item->ichki_audit_tugrilagan == 0){echo "bgcolor=\"#ff9999\"";}else{echo "bgcolor=\"#79d2a6\"";} ?>>
 
 					<?php 
 					//echo $item->tugrilandi_ichki_audit;
@@ -204,6 +189,18 @@ $canDelete  = $user->authorise('core.delete', 'com_chora');
 					</td>
 				<?php endif; ?>
 
+			</tr>
+			<tr>
+			<td colspan="10">
+			<?php echo JHtml::_('grid.sort',  'COM_CHORA_CHORA_TADBIRLARS_MAZMUNI', 'a.mazmuni', $listDirn, $listOrder); ?> : 
+					<?php echo $item->mazmuni; ?>
+</td>
+			</tr>
+			<tr>
+			<td colspan="10">
+			<?php echo JHtml::_('grid.sort',  'COM_CHORA_CHORA_TADBIRLARS_VAZIFA', 'a.vazifa', $listDirn, $listOrder); ?> : 
+					<?php echo $item->vazifa; ?>
+</td>
 			</tr>
 		<?php endforeach; ?>
 		</tbody>
